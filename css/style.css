@@ -25,7 +25,7 @@
 html, body{ position: relative; height: 100%; color: var(--color6); font-family: 'Noto Sans KR', sans-serif; }
 /* h1{ font-size: 16px; font-weight: normal; } */
 li{ list-style: none; }
-a{ font-family: 'Noto Sans KR', sans-serif; text-decoration: none; }
+a{ font-family: 'Noto Sans KR', sans-serif; text-decoration: none; color: var(--color6); }
 a:hover{ text-decoration: underline; }
 
 /* 헤더 */
@@ -57,6 +57,7 @@ nav li{
   cursor: pointer;
 }
 .progress_bar{
+  overflow: hidden;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -98,11 +99,73 @@ h2{
 #about{
   background: gold;
 }
+#about ul{
+  display: flex;
+}
+
+/* progress bar style 진행바 */
+.progressbar{
+  margin: 0 auto;
+  width: 70%;
+}
+.progressbar .items_wrap{
+  overflow: hidden;
+  color: #fff;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,.3);
+}
+.progressbar .items_wrap:last-child{ margin-bottom: 0;}
+
+.progressbar .items_wrap .items{
+  overflow: hidden;
+  max-height: 45px;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  border-radius:0 5px 5px 0;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  box-shadow: 2px 0 2px rgba(0,0,0,.5);
+  width: 0;
+  opacity: 1;
+  transition: 1s;
+}
+.progressbar .items .title{
+  float: left;
+  font-weight: 700;
+  padding: 6px 0;
+}
+.progressbar .items .percent{
+  float: right;
+  padding: 6px 0;
+}
+.progressbar .items_wrap:nth-of-type(1) .items{
+  background: #ebaf17;
+  width: 50%;
+}
+.progressbar .items_wrap:nth-of-type(2) .items{
+  background: #edd118;
+  width: 80%;
+}
+.progressbar .items_wrap:nth-of-type(3) .items{
+  background: #dfed18;
+  width: 70%;
+}
+.progressbar .items_wrap:nth-of-type(4) .items{
+  background: #abeb17;
+  width: 60%;
+}
+
+
+
+
+
 #project{
   background: skyblue;
 }
-.list-wrap{
+.list_wrap{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1200px;
 }
 .list{
   overflow: hidden;
@@ -131,34 +194,46 @@ h2{
   transform: scale( 1.05 );
   opacity: .3;
 }
-.list-text-wrap{
+.list_text_wrap{
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   top: 10%;
 }
-.list-title{
+.list_title{
   position: relative;
   display: inline-block;
   font-size: 21px;
   font-weight: bold;
   padding: 10px 20px;
+  /* background: rgba(255, 255, 255, .5); */
+}
+.list:hover .list_title{
   background: rgba(255, 255, 255, .5);
 }
-.list-subtitle{
+
+.list_subtitle{
   position: relative;
   display: inline-block;
   padding-top: 20px;
   padding: 10px 20px;
+  /* background: rgba(255, 255, 255, .5); */
+}
+.list:hover .list_subtitle{
   background: rgba(255, 255, 255, .5);
 }
+
 .view{
   position: relative;
   padding: 15px 30px 15px 53px;
   bottom: 15%;
-  background: pink;
+  /* background: rgba(255, 255, 255, .5); */
 }
+.list:hover .view{
+  background: rgba(255, 255, 255, .5)
+}
+
 .view:before{
   content: '';
   position: absolute;
@@ -177,15 +252,6 @@ h2{
 }
 .adobe:before{
   background-image: url('../img/adobe.jpg');
-}
-
-
-
-#contact{
-  background: lavender;
-}
-section:last-of-type{
-  height: calc( 100vh - 36px );
 }
 
 /* 푸터 */

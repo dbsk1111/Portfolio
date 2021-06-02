@@ -25,7 +25,7 @@ $(function(){
   // 홈 클릭 시 스크롤 이동
   $('#home').on('click',function(){
     if(!$('html').is(':animated')){
-      $('html').animate( { scrollTop: $('#about').offset().top, behavior: 'smooth' },400,'swing',function(){
+      $('html').animate( { scrollTop: $('#project').offset().top, behavior: 'smooth' },400,'swing',function(){
       // $('html, body').animate( { scrollTop: $('#about').offset().top, behavior: 'smooth' },400,'swing',function(){
         // event.preventDefault();
       })
