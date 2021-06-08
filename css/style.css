@@ -207,6 +207,7 @@ h2{
   font-size: 21px;
   font-weight: bold;
   padding: 10px 20px;
+  text-transform: capitalize;
   /* background: rgba(255, 255, 255, .5); */
 }
 .list:hover .list_title{
@@ -250,9 +251,28 @@ h2{
 .list:nth-child(3){
   background-color: pink;
 }
+.stx:before{
+  background-image: url('../img/stx.jpg');
+}
 .adobe:before{
   background-image: url('../img/adobe.jpg');
 }
+.daegu:before{
+  background-image: url('../img/daegu.jpg');
+}
+.nauib:before{
+  background-image: url('../img/nauib.jpg');
+}
+.shes:before{
+  background-image: url('../img/shes.jpg');
+}
+.lg:before{
+  background-image: url('../img/lg.jpg');
+}
+.nhis:before{
+  background-image: url('../img/nhis.jpg');
+}
+
 
 /* 푸터 */
 footer{
