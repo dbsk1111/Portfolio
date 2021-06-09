@@ -24,13 +24,21 @@ $(function(){
 
   // 홈 클릭 시 스크롤 이동
   $('#home').on('click',function(){
-    if(!$('html').is(':animated')){
-      $('html').animate( { scrollTop: $('#project').offset().top, behavior: 'smooth' },400,'swing',function(){
-      // $('html, body').animate( { scrollTop: $('#about').offset().top, behavior: 'smooth' },400,'swing',function(){
+    if(!$('html,body').is(':animated')){
+      $('html,body').animate( { scrollTop: $('#project').offset().top, behavior: 'smooth' },400,'swing',function(){
+
         // event.preventDefault();
+        window.addEventListener('wheel', (e) => {
+          if (e.deltaY != 0 ) {
+            console.log('휠 조작')
+            $('html,body').stop();
+          }
+        });
+
       })
     }
   })
+
 
   // 스크롤 진행도
   $(window).scroll(function(){

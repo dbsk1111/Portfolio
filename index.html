@@ -3,15 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="portfolio" content="portfolio">
+    <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/canvas.js"></script>
+    <script defer src="./js/bootstrap.bundle.min.js"></script>
     <script defer src="./js/common.js"></script>
   </head>
   <body>
-    <section id="home">
-      <h2>더 나은 세상을 함께 만들어나갑시다</h2>
+    <section id="home" class="key_back">
+      <canvas id="canvas"></canvas>
+      <div class="container-fluid">
+       <div class="row">
+         <div class="col-12 text-center">
+           <h2>더 나은 세상을 함께 만들어나갑시다</h2>
+         </div>
+       </div>
+      </div>
     </section>
     <header>
       <nav>
@@ -24,91 +34,114 @@
       <div class="progress_bar"></div>
     </header>
     <section id="project">
-      <h2>Project</h2>
-      <div class="list_wrap">
-        <div class="list stx">
-          <div class="list_text_wrap">
-            <p class="list_title">STX</p>
-            <p class="list_subtitle">fixed / css</p>
-          </div>
-          <!-- https://fonts.google.com/icons -->
-          <a href="#" class="view">VIEW SITE</a>
+      <div class="container">
+        <div class="row">
+          <h2 class="text-center">Project</h2>
         </div>
-        <div class="list adobe">
-          <div class="list_text_wrap">
-            <p class="list_title">adobe</p>
-            <p class="list_subtitle">responsive / jquery</p>
-          </div>
-          <!-- https://fonts.google.com/icons -->
-          <a href="#" class="view">VIEW SITE</a>
-        </div>
-        <div class="list daegu">
-          <div class="list_text_wrap">
-            <p class="list_title">daegu</p>
-            <p class="list_subtitle">responsive / jquery</p>
-          </div>
-          <!-- https://fonts.google.com/icons -->
-          <a href="#" class="view">VIEW SITE</a>
-        </div>
-        <div class="list nauib">
-          <div class="list_text_wrap">
-            <p class="list_title">nauib</p>
-            <p class="list_subtitle">responsive / jquery</p>
-          </div>
-          <!-- https://fonts.google.com/icons -->
-          <a href="#" class="view">VIEW SITE</a>
-        </div>
-        <div class="list shes">
-          <div class="list_text_wrap">
-            <p class="list_title">shes</p>
-            <p class="list_subtitle">responsive / jquery / sass</p>
-          </div>
-          <!-- https://fonts.google.com/icons -->
-          <a href="#" class="view">VIEW SITE</a>
-        </div>
-        <div class="list lg">
-          <div class="list_text_wrap">
-            <p class="list_title">LG</p>
-            <p class="list_subtitle">fixed / sass</p>
-          </div>
-          <!-- https://fonts.google.com/icons -->
-          <a href="#" class="view">VIEW SITE</a>
-        </div>
-        <div class="list nhis">
-          <div class="list_text_wrap">
-            <p class="list_title">nhis</p>
-            <p class="list_subtitle">responsive / jquery / sass</p>
-          </div>
-          <!-- https://fonts.google.com/icons -->
-          <a href="#" class="view">VIEW SITE</a>
-        </div>
-        <!-- <div class="list"></div> -->
-      </div>
-    </section>
-    <section id="about">
-      <h2>About</h2>
-      <ul>
-        <li>
-          <img src="./img/grading_black_24dp.svg" alt="">
-          <p>웹표준</p>
-          <p>W3C가 지정한 표준안을 준수하며 제작</p>
-        </li>
-        <li>
-          <img src="./img/content_copy_black_24dp.svg" alt="">
-          <p>크로스브라우징</p>
-          <p>어떤 브라우저에서도 동일한 화면을 출력</p>
-        </li>
-        <li>
-          <img src="./img/devices_other_black_24dp.svg" alt="">
-          <p>반응형</p>
-          <p>어떤 장치에서도 보기 좋게 제작</p>
-        </li>
-        <li>
-          <img src="./img/settings_overscan_black_24dp.svg" alt="">
 
-        </li>
-      </ul>
-      <div class="progressbar">
+        <div class="row">
+          <div class="list_wrap">
+            <!-- row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 -->
+            <div class="list stx">
+              <div class="list_text_wrap">
+                <div>
+                  <p class="list_title">STX건설</p><br>
+                  <p class="list_subtitle">Fixed / CSS</p>
+                </div>
+                <a href="#" class="view">view site</a>
+              </div>
+            </div>
+            <div class="list adobe">
+              <div class="list_text_wrap">
+                <div>
+                  <p class="list_title">adobe</p><br>
+                  <p class="list_subtitle">Responsive / CSS / Jquery</p>
+                </div>
+                <a href="#" class="view">view site</a>
+              </div>
+            </div>
+            <div class="list daegu">
+              <div class="list_text_wrap">
+                <div>
+                  <p class="list_title">대구광역시체육회</p><br>
+                  <p class="list_subtitle">Responsive / CSS / Jquery</p>
+                </div>
+                <a href="#" class="view">view site</a>
+              </div>
+            </div>
+            <div class="list nauib">
+              <div class="list_text_wrap">
+                <div>
+                  <p class="list_title">나우아이비</p><br>
+                  <p class="list_subtitle">Responsive / CSS / Jquery</p>
+                </div>
+                <a href="#" class="view">view site</a>
+              </div>
+            </div>
+            <div class="list shes">
+              <div class="list_text_wrap">
+                <div>
+                  <p class="list_title">쉬즈성형외과</p><br>
+                  <p class="list_subtitle">Responsive / SCSS / Jquery</p>
+                </div>
+                <a href="#" class="view">view site</a>
+              </div>
+            </div>
+            <div class="list lg">
+              <div class="list_text_wrap">
+                <div>
+                  <p class="list_title">LG</p><br>
+                  <p class="list_subtitle">Fixed / SCSS</p>
+                </div>
+                <a href="#" class="view">view site</a>
+              </div>
+            </div>
+            <div class="list nhis">
+              <div class="list_text_wrap">
+                <div>
+                  <p class="list_title">국민건강보험</p><br>
+                  <p class="list_subtitle">Responsive / SCSS / Jquery</p>
+                </div>
+                <a href="#" class="view">view site</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </section>
+    <section id="about" class="text-center ">
+      <div class="container">
+        <div class="row">
+          <h2>About</h2>
+        </div>
+        <div class="row">
+          <ul>
+            <li>
+              <img src="./img/grading_black_24dp.svg" alt="웹표준">
+              <p class="list_title">웹표준</p>
+              <p>W3C가 지정한 표준안을 준수하며 제작</p>
+            </li>
+            <li>
+              <img src="./img/content_copy_black_24dp.svg" alt="크로스브라우징">
+              <p class="list_title">크로스브라우징</p>
+              <p>어떤 브라우저에서도 동일한 화면을 출력</p>
+            </li>
+            <li>
+              <img src="./img/devices_other_black_24dp.svg" alt="반응형">
+              <p class="list_title">반응형</p>
+              <p>어떤 장치에서도 보기 좋게 제작</p>
+            </li>
+            <!-- <li>
+              <img src="./img/settings_overscan_black_24dp.svg" alt="">
+
+            </li> -->
+          </ul>
+        </div>
+        <div class="row">
+          <div class="progressbar">
 
             <!-- .items_wrap*4>.items>.title+.percent -->
             <div class="items_wrap">
@@ -136,6 +169,9 @@
               </div>
             </div>
           </div>
+
+        </div>
+      </div>
     </section>
     <footer>
       &copy; 2021. <address><a href="mailto:naver@naver.com">Man</a></address> all right reserved.

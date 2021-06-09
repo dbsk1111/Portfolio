@@ -1,53 +1,38 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap");
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 :root {
   /* 강조색 */
   --color0: #378ef0;
+
   /* 일반적인 글자 */
   --color1: #fff;
+
   --color2: #f2eeeb;
   --color4: #d9cbc0;
   --color5: #a68572;
+
   /* 짙은 회색 */
   --color6: #444;
+
   /* 컬러 10 위에 쓸 호버 배경색 */
   --color9: rgba(240, 240, 240, .06);
+
   /* 헤더, 푸터 가장 어두운 배경색 */
   --color10: #191919;
+
+  // 홈 타이틀
   --font35: 35px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  line-height: 1;
-}
-
-html, body {
-  position: relative;
-  height: 100%;
-  color: var(--color6);
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
+*{ margin: 0; padding: 0; box-sizing: border-box; line-height: 1; }
+html, body{ position: relative; height: 100%; color: var(--color6); font-family: 'Noto Sans KR', sans-serif; }
 /* h1{ font-size: 16px; font-weight: normal; } */
-li {
-  list-style: none;
-}
-
-a {
-  font-family: 'Noto Sans KR', sans-serif;
-  text-decoration: none;
-  color: var(--color6);
-}
-
-a:hover {
-  text-decoration: underline;
-}
+li{ list-style: none; }
+a{ font-family: 'Noto Sans KR', sans-serif; text-decoration: none; color: var(--color6); }
+a:hover{ text-decoration: underline; }
 
 /* 헤더 */
-header {
+header{
   position: absolute;
   /* position: fixed; */
   display: flex;
@@ -62,23 +47,19 @@ header {
   /* opacity: .3; */
   z-index: 100;
 }
-
-.fixed {
+.fixed{
   position: fixed;
   top: 0;
 }
-
-nav ul {
+nav ul{
   display: flex;
 }
-
-nav li {
+nav li{
   margin: 0 15px;
   color: var(--color1);
   cursor: pointer;
 }
-
-.progress_bar {
+.progress_bar{
   overflow: hidden;
   position: absolute;
   bottom: 0;
@@ -89,8 +70,7 @@ nav li {
   border-radius: 2px;
   z-index: 50;
 }
-
-.progress_bar:before {
+.progress_bar:before{
   content: '';
   position: absolute;
   bottom: 0;
@@ -102,7 +82,7 @@ nav li {
 }
 
 /* 섹션 */
-section {
+section{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -110,120 +90,107 @@ section {
   align-items: center;
   min-height: 100vh;
 }
-
-h2 {
+h2{
   /* margin-top: 10%; */
+  // position: relative;
   font-size: var(--font35);
 }
 
-#home {
+#home{
   overflow: hidden;
   background-color: var(--color10);
+  h2{
+    color: var(--color1);
+  }
 }
 
-#home h2 {
-  color: var(--color1);
-}
-
-#canvas {
+#canvas{
   position: absolute;
   top: 0;
   left: 0;
 }
 
-#about {
+#about{
   height: calc( 100vh - 36px);
-}
-
-#about ul {
-  display: flex;
-}
-
-#about ul li {
-  flex: 1;
-}
-
-#about ul li img {
-  width: 20%;
+  // background: var(--color2);
+  ul{
+    display: flex;
+    li{
+      flex: 1;
+      img{
+        width: 20%;
+      }
+    }
+  }
 }
 
 /* progress bar style 진행바 */
-.progressbar {
+.progressbar{
   margin: 0 auto;
   width: 70%;
+  .items_wrap{
+    overflow: hidden;
+    color: #fff;
+    margin-bottom: 15px;
+    background: rgba(255,255,255,.3);
+    &:last-child{ margin-bottom: 0;}
+  }
 }
-
-.progressbar .items_wrap {
-  overflow: hidden;
-  color: #fff;
-  margin-bottom: 15px;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.progressbar .items_wrap:last-child {
-  margin-bottom: 0;
-}
-
-.progressbar .items_wrap .items {
+.progressbar .items_wrap .items{
   overflow: hidden;
   max-height: 45px;
   box-sizing: border-box;
   padding: 6px 10px;
-  border-radius: 0 5px 5px 0;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
+  border-radius:0 5px 5px 0;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  box-shadow: 2px 0 2px rgba(0,0,0,.5);
   width: 0;
   opacity: 1;
   transition: 1s;
 }
-
-.progressbar .items .title {
+.progressbar .items .title{
   float: left;
   font-weight: 700;
   padding: 6px 0;
 }
-
-.progressbar .items .percent {
+.progressbar .items .percent{
   float: right;
   padding: 6px 0;
 }
-
-.progressbar .items_wrap:nth-of-type(1) .items {
+.progressbar .items_wrap:nth-of-type(1) .items{
   background: #ebaf17;
   width: 50%;
 }
-
-.progressbar .items_wrap:nth-of-type(2) .items {
+.progressbar .items_wrap:nth-of-type(2) .items{
   background: #edd118;
   width: 80%;
 }
-
-.progressbar .items_wrap:nth-of-type(3) .items {
+.progressbar .items_wrap:nth-of-type(3) .items{
   background: #dfed18;
   width: 70%;
 }
-
-.progressbar .items_wrap:nth-of-type(4) .items {
+.progressbar .items_wrap:nth-of-type(4) .items{
   background: #abeb17;
   width: 60%;
 }
 
-.row + .row {
+
+
+.row + .row{
   margin-top: 60px;
 }
 
-#project {
+#project{
   padding: 120px 0 120px;
   background: #fff;
 }
-
-.list_wrap {
+.list_wrap{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  // width: 1200px;
 }
-
-.list {
+.list{
   overflow: hidden;
   position: relative;
   display: flex;
@@ -233,26 +200,28 @@ h2 {
   text-align: center;
   width: 400px;
   height: 300px;
+  // height: 100%;
   max-height: 300px;
+  // background: #fff no-repeat center center / contain;
+  // transition: 1s;
 }
-
-.list:before {
+.list:before{
   content: '';
   position: absolute;
+  // width: 400px;
+  // height: 300px;
   width: 100%;
   height: 100%;
   background: no-repeat center center / contain;
-  transform: scale(1);
+  transform: scale( 1 );
   /* opacity: 0; */
   transition: all .2s;
 }
-
-.list:hover:before {
-  transform: scale(1.05);
+.list:hover:before{
+  transform: scale( 1.05 );
   opacity: .3;
 }
-
-.list_text_wrap {
+.list_text_wrap{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -262,29 +231,28 @@ h2 {
   opacity: 0;
   transition: .2s;
 }
-
-.list:hover .list_text_wrap {
+.list:hover .list_text_wrap{
   opacity: 1;
 }
-
-.list_text_wrap .list_title {
+.list_text_wrap .list_title{
   display: inline-block;
 }
-
-.list_title {
+.list_title{
   position: relative;
+  
   font-size: 21px;
   font-weight: bold;
   padding: 10px 20px;
   text-transform: capitalize;
   border-radius: 5px 5px 0 0;
+
+  // border-radius: 5px;
+}
+.list:hover .list_title, .list:hover .list_subtitle, .list:hover .view{
+  background: rgba(255, 255, 255, .85);
 }
 
-.list:hover .list_title, .list:hover .list_subtitle, .list:hover .view {
-  background: rgba(255, 255, 255, 0.85);
-}
-
-.list_subtitle {
+.list_subtitle{
   position: relative;
   display: inline-block;
   padding-top: 20px;
@@ -292,71 +260,64 @@ h2 {
   border-radius: 5px;
 }
 
-.view {
+.view{
   position: relative;
   padding: 15px 30px 15px 53px;
   border-radius: 5px;
   text-transform: uppercase;
 }
 
-.view:before {
+.view:before{
   content: '';
   position: absolute;
   top: 15px;
   left: 27px;
   width: 18px;
   height: 18px;
-  background: url("../img/open_in_new_black_18dp.svg") no-repeat center;
+  background: url('../img/open_in_new_black_18dp.svg') no-repeat center;
+}
+.stx:before{
+  background-image: url('../img/stx.jpg');
+}
+.adobe:before{
+  background-image: url('../img/adobe.jpg');
+}
+.daegu:before{
+  background-image: url('../img/daegu.jpg');
+}
+.nauib:before{
+  background-image: url('../img/nauib.jpg');
+}
+.shes:before{
+  background-image: url('../img/shes.jpg');
+}
+.lg:before{
+  background-image: url('../img/lg.jpg');
+}
+.nhis:before{
+  background-image: url('../img/nhis.jpg');
 }
 
-.stx:before {
-  background-image: url("../img/stx.jpg");
-}
-
-.adobe:before {
-  background-image: url("../img/adobe.jpg");
-}
-
-.daegu:before {
-  background-image: url("../img/daegu.jpg");
-}
-
-.nauib:before {
-  background-image: url("../img/nauib.jpg");
-}
-
-.shes:before {
-  background-image: url("../img/shes.jpg");
-}
-
-.lg:before {
-  background-image: url("../img/lg.jpg");
-}
-
-.nhis:before {
-  background-image: url("../img/nhis.jpg");
-}
 
 /* 푸터 */
-footer {
+footer{
   padding: 10px 0;
   color: var(--color4);
   text-align: center;
   background-color: var(--color10);
 }
-
-footer a {
+footer a{
   color: var(--color2);
   font-weight: bold;
 }
-
-address {
+address{
   display: inline;
   font-style: normal;
 }
 
-@media screen and (max-width: 424px) {
-  .list {
+
+@media screen and ( max-width: 424px ){
+  .list{
     height: 70vw;
   }
 }
