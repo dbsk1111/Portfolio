@@ -123,6 +123,7 @@ h2 {
 
 #home h2 {
   color: var(--color1);
+  word-break: keep-all;
 }
 
 #canvas {
@@ -133,6 +134,7 @@ h2 {
 
 #about {
   height: calc( 100vh - 36px);
+  word-break: keep-all;
 }
 
 #about ul {
