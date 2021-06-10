@@ -23,6 +23,9 @@
 
   // 홈 타이틀
   --font35: 35px;
+
+  // 진행 바 크기
+  --progress: 40px;
 }
 
 *{ margin: 0; padding: 0; box-sizing: border-box; line-height: 1; }
@@ -31,6 +34,10 @@ html, body{ position: relative; height: 100%; color: var(--color6); font-family:
 li{ list-style: none; }
 a{ font-family: 'Noto Sans KR', sans-serif; text-decoration: none; color: var(--color6); }
 a:hover{ text-decoration: underline; }
+
+br.mobile_show{
+  display: none;
+}
 
 /* 헤더 */
 header{
@@ -113,18 +120,20 @@ h2{
 }
 
 #about{
+  padding: 120px 0 60px;
   height: calc( 100vh - 36px);
   word-break: keep-all;
-  // background: var(--color2);
   ul{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     width: 70%;
     li{
-      // flex: 1;
       img{
         width: 20%;
+      }
+      p{
+        line-height: 1.5;
       }
     }
   }
@@ -135,49 +144,45 @@ h2{
   margin: 0 auto;
   width: 70%;
   .items_wrap{
-    color: var(--color1);
     background: var(--color2);
-    // overflow: hidden;
-    // color: #fff;
-    // margin-bottom: 15px;
-    // background: rgba(255,255,255,.3);
-    // &:last-child{ margin-bottom: 0;}
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+    height: var(--progress);
+    font-weight: bold;
+    .title{
+      flex: 0 1 100px;
+      line-height: var(--progress);
+      color: var(--color1);
+      background: var(--color0);
+      box-sizing: border-box;
+    }
+    .percent{
+      flex: 1;
+      p{
+        padding: 0 15px;
+        line-height: var(--progress);
+        color: var(--color10);
+        background: var(--color0-sub);
+      }
+    }
     &:not(:first-child){
       margin-top: 10px;
     }
-    &:nth-of-type(1) .items{
+    &:nth-of-type(1) .percent p{
       width: 90%;
     }
-    &:nth-of-type(2) .items{
+    &:nth-of-type(2) .percent p{
       width: 90%;
     }
-    &:nth-of-type(3) .items{
+    &:nth-of-type(3) .percent p{
       width: 70%;
     }
-    &:nth-of-type(4) .items{
+    &:nth-of-type(4) .percent p{
       width: 80%;
     }
-    &:nth-of-type(5) .items{
+    &:nth-of-type(5) .percent p{
       width: 90%;
-    }
-    .items{
-      display: flex;
-      // justify-content: space-between;
-      align-items: center;
-      height: 32px;
-      background: var(--color0-sub);
-      &.init{
-        // width: 163px;
-      }
-      .title{
-        width: 100px;
-        line-height: 32px;
-        background: var(--color0);
-        box-sizing: border-box;
-      }
-      .percent{
-        padding: 0 15px;
-      }
     }
   }
 }
@@ -203,6 +208,7 @@ h2{
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  margin-top: 30px;
   width: 400px;
   height: 300px;
   max-height: 300px;
@@ -314,14 +320,8 @@ address{
 
 
 @media screen and ( max-width: 768px ){
-  #project{
-    .list_wrap > div:not(:first-child){
-      margin-top: 30px;
-    }
-  }
   #about{
     height: auto;
-    padding-bottom: 60px;
     li:not(:first-child){
       margin-top: 30px;
     }
@@ -331,5 +331,8 @@ address{
 @media screen and ( max-width: 424px ){
   .list{
     height: 70vw;
+  }
+  br.mobile_show{
+    display: block;
   }
 }

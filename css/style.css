@@ -16,6 +16,7 @@
   /* 헤더, 푸터 가장 어두운 배경색 */
   --color10: #191919;
   --font35: 35px;
+  --progress: 40px;
 }
 
 * {
@@ -45,6 +46,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+br.mobile_show {
+  display: none;
 }
 
 /* 헤더 */
@@ -134,6 +139,7 @@ h2 {
 }
 
 #about {
+  padding: 120px 0 60px;
   height: calc( 100vh - 36px);
   word-break: keep-all;
 }
@@ -149,6 +155,10 @@ h2 {
   width: 20%;
 }
 
+#about ul li p {
+  line-height: 1.5;
+}
+
 /* progress bar style 진행바 */
 .progressbar {
   margin: 0 auto;
@@ -156,50 +166,55 @@ h2 {
 }
 
 .progressbar .items_wrap {
-  color: var(--color1);
   background: var(--color2);
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  height: var(--progress);
+  font-weight: bold;
+}
+
+.progressbar .items_wrap .title {
+  flex: 0 1 100px;
+  line-height: var(--progress);
+  color: var(--color1);
+  background: var(--color0);
+  box-sizing: border-box;
+}
+
+.progressbar .items_wrap .percent {
+  flex: 1;
+}
+
+.progressbar .items_wrap .percent p {
+  padding: 0 15px;
+  line-height: var(--progress);
+  color: var(--color10);
+  background: var(--color0-sub);
 }
 
 .progressbar .items_wrap:not(:first-child) {
   margin-top: 10px;
 }
 
-.progressbar .items_wrap:nth-of-type(1) .items {
+.progressbar .items_wrap:nth-of-type(1) .percent p {
   width: 90%;
 }
 
-.progressbar .items_wrap:nth-of-type(2) .items {
+.progressbar .items_wrap:nth-of-type(2) .percent p {
   width: 90%;
 }
 
-.progressbar .items_wrap:nth-of-type(3) .items {
+.progressbar .items_wrap:nth-of-type(3) .percent p {
   width: 70%;
 }
 
-.progressbar .items_wrap:nth-of-type(4) .items {
+.progressbar .items_wrap:nth-of-type(4) .percent p {
   width: 80%;
 }
 
-.progressbar .items_wrap:nth-of-type(5) .items {
+.progressbar .items_wrap:nth-of-type(5) .percent p {
   width: 90%;
-}
-
-.progressbar .items_wrap .items {
-  display: flex;
-  align-items: center;
-  height: 32px;
-  background: var(--color0-sub);
-}
-
-.progressbar .items_wrap .items .title {
-  width: 100px;
-  line-height: 32px;
-  background: var(--color0);
-  box-sizing: border-box;
-}
-
-.progressbar .items_wrap .items .percent {
-  padding: 0 15px;
 }
 
 .row + .row {
@@ -225,6 +240,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  margin-top: 30px;
   width: 400px;
   height: 300px;
   max-height: 300px;
@@ -354,12 +370,8 @@ address {
 }
 
 @media screen and (max-width: 768px) {
-  #project .list_wrap > div:not(:first-child) {
-    margin-top: 30px;
-  }
   #about {
     height: auto;
-    padding-bottom: 60px;
   }
   #about li:not(:first-child) {
     margin-top: 30px;
@@ -369,5 +381,8 @@ address {
 @media screen and (max-width: 424px) {
   .list {
     height: 70vw;
+  }
+  br.mobile_show {
+    display: block;
   }
 }
