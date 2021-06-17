@@ -371,6 +371,9 @@ address {
   #about li:not(:first-child) {
     margin-top: 30px;
   }
+  .list:hover:before {
+    filter: none;
+  }
 }
 
 @media screen and (max-width: 424px) {
